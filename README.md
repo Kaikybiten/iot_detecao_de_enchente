@@ -10,8 +10,7 @@ O projeto foi desenvolvido com foco em aplicações de Internet das Coisas (IoT)
 
 - Monitoramento contínuo do nível da água;
 - Envio de dados em tempo real utilizando MQTT;
-- Acionamento de alerta sonoro em situações críticas;
-- Simulação completa em ambiente virtual utilizando Wokwi.
+- Acionamento de alerta sonoro em situações críticas.
 
 ---
 
@@ -23,7 +22,6 @@ O projeto foi desenvolvido com foco em aplicações de Internet das Coisas (IoT)
 - HiveMQ
 - Arduino IDE
 - Linguagem C/C++
-- Wokwi Simulator
 
 ---
 
@@ -49,14 +47,7 @@ O ESP32 processa os dados obtidos e:
 | `enchente/nivel` | Envio contínuo do nível da água |
 | `enchente/alerta` | Envio de alertas críticos |
 
-## Exemplo de mensagens
-
-### Tópico: `enchente/nivel`
-
-```text
-127 centimetros
-28 centimetros
-14 centimetros
+---
 
 # ⚙️ Hardware Utilizado
 
@@ -66,83 +57,6 @@ O ESP32 processa os dados obtidos e:
 | HC-SR04 | 1 |
 | Buzzer | 1 |
 | Resistores 1kΩ | 2 |
-
----
-
-# 🔌 Ligações do Circuito
-
-## HC-SR04 → ESP32
-
-| HC-SR04 | ESP32 |
-|---|---|
-| TRIG | GPIO 13 |
-| ECHO | GPIO 27 |
-| VCC | 5V |
-| GND | GND |
-
----
-
-## Buzzer → ESP32
-
-| Buzzer | ESP32 |
-|---|---|
-| Positivo | GPIO 23 |
-| Negativo | GND |
-
-> O pino ECHO do HC-SR04 foi conectado ao ESP32 utilizando divisor de tensão para adequação do sinal de 5V para 3,3V.
-
----
-
-# ▶️ Como Executar
-
-## 1. Clone o repositório
-
-```bash
-git clone https://github.com/seu-usuario/seu-repositorio.git
-```
-
----
-
-## 2. Instale as bibliotecas necessárias
-
-Biblioteca utilizada:
-
-```text
-PubSubClient
-```
-
-Na Arduino IDE:
-
-```text
-Sketch > Include Library > Manage Libraries
-```
-
-Pesquise por:
-
-```text
-PubSubClient
-```
-
----
-
-## 3. Configure a rede Wi-Fi
-
-No código:
-
-```cpp
-const char* ssid = "Wokwi-GUEST";
-const char* password = "";
-```
-
-Substitua pelos dados da sua rede caso utilize hardware físico.
-
----
-
-## 4. Execute no Wokwi
-
-Importe:
-- o arquivo `.ino`;
-- o arquivo `diagram.json`.
 
 ---
 
@@ -162,10 +76,4 @@ Broker utilizado:
 
 ```text
 broker.hivemq.com
-```
-
-Porta:
-
-```text
-1883
 ```
